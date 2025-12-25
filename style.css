@@ -12,7 +12,7 @@ body {
   background: #f3f4f6 url("./фон.jpg") center/cover fixed no-repeat;
 }
 
-/* лёгкая дымка, чтобы текст читался на фоне */
+/* Лёгкая дымка над фоном */
 body::before {
   content: "";
   position: fixed;
@@ -71,13 +71,13 @@ main {
   font-size: 24px;
 }
 
-/* Белые карточки (оба блока одинаковой ширины) */
+/* Белые карточки */
 
 .links__container {
   list-style: none;
   margin: 0 auto;
   padding: 18px 26px;
-  max-width: 580px;         /* ширину увеличили, чтобы всё влезало в строку */
+  max-width: 600px;            /* чуть шире, чтобы всё влезало */
   background: rgba(255, 255, 255, 0.96);
   border-radius: 22px;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
@@ -112,8 +112,8 @@ main {
   justify-content: flex-start;
   gap: 6px;
   padding-left: 14px;
-  border-left: 1px solid rgba(15, 23, 42, 0.18);
-  white-space: nowrap;              /* всё в одну строку */
+  border-left: 1px solid #d1d5db;  /* ← более заметная вертикальная линия */
+  white-space: nowrap;
   text-decoration: none;
   font-size: 16px;
   color: #c05621;
@@ -127,7 +127,12 @@ main {
   font-size: 16px;
 }
 
-/* Наследуем существующий класс, чтобы ничего не сломать */
+.links__text {
+  /* если когда-нибудь не влезет, он аккуратно будет обрезан внутри,
+     но сейчас ширины достаточно, чтобы всё было в строку */
+}
+
+/* Наследуем существующий класс */
 
 .linsk__link {
   text-decoration: none;
