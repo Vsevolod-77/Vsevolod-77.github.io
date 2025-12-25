@@ -77,7 +77,7 @@ main {
   list-style: none;
   margin: 0 auto;
   padding: 18px 26px;
-  max-width: 600px;            /* чуть шире, чтобы всё влезало */
+  max-width: 600px; /* одинаковая ширина для обоих блоков */
   background: rgba(255, 255, 255, 0.96);
   border-radius: 22px;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
@@ -104,7 +104,7 @@ main {
   white-space: nowrap;
 }
 
-/* Правая часть с вертикальной чертой и иконкой */
+/* Правая часть */
 
 .links__value {
   display: inline-flex;
@@ -112,24 +112,20 @@ main {
   justify-content: flex-start;
   gap: 6px;
   padding-left: 14px;
-  border-left: 1px solid #d1d5db;  /* ← более заметная вертикальная линия */
   white-space: nowrap;
   text-decoration: none;
   font-size: 16px;
   color: #c05621;
 }
 
-.links__value:hover {
-  color: #9c4221;
-}
+/* отдельные кусочки внутри */
 
 .links__icon {
   font-size: 16px;
 }
 
 .links__text {
-  /* если когда-нибудь не влезет, он аккуратно будет обрезан внутри,
-     но сейчас ширины достаточно, чтобы всё было в строку */
+  white-space: nowrap;
 }
 
 /* Наследуем существующий класс */
@@ -137,6 +133,11 @@ main {
 .linsk__link {
   text-decoration: none;
   color: inherit;
+}
+
+/* ВОТ ТУТ — вертикальная черта, принудительно */
+a.links__value {
+  border-left: 1px solid rgba(15, 23, 42, 0.25) !important;
 }
 
 /* Футер */
@@ -150,13 +151,14 @@ footer {
   padding: 8px 18px;
   border-radius: 999px;
   border: 1px solid rgba(15, 23, 42, 0.18);
-  background: rgba(255, 255, 255, 0.95);
+  background: #c05621;
+  color: #fff;
   font-size: 14px;
   cursor: pointer;
 }
 
 .button-link:hover {
-  background: rgba(249, 250, 251, 0.95);
+  background: #9c4221;
 }
 
 /* Адаптив */
